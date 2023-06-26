@@ -6,13 +6,15 @@ export function LogoutPage() {
     async function fetchLogout() {
       await logout().finally(() => {
         localStorage.removeItem('token')
-        localStorage.removeItem('user_id')
+        localStorage.removeItem('userId')
         window.location.href = '/'
       })
     }
     fetchLogout()
-  })
+  }, [])
   return (
-    <div> Logout user... </div>
+    <div>
+      <h1>Logout</h1>
+    </div>
   )
 }
