@@ -16,7 +16,8 @@ export function Navigation() {
           if (
             window.location.pathname !== '/login'
               && window.location.pathname !== '/logout'
-              && window.location.pathname !== '/home') {
+              && window.location.pathname !== '/home'
+              && window.location.pathname !== '/laptops') {
             window.location.href = '/login'
           }
         })
@@ -31,7 +32,7 @@ export function Navigation() {
       <nav>
         {profile && <Link to="/dashboard-manager"> Dashboards manager </Link>}
         {profile && <Link to="/dashboard-viewer"> Dashboards viewer </Link>}
-        {profile && <Link to="/laptops"> Top Laptops manager </Link>}
+        <Link to="/laptops"> Top Laptops manager </Link>
         {!profile && <Link to="/login"> Log in </Link>}
         {profile && <Link to="/logout"> Log out </Link>}
       </nav>
