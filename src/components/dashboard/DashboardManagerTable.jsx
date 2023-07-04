@@ -9,7 +9,7 @@ function DashboardManagerTable({dashboards}) {
             <tr>
               <th>Title</th>
               <th>Description</th>
-              <th>Embed link</th>
+              <th>Show dashboard</th>
               <th>Created at</th>
               <th>Updated at</th>
               <th>Recently edited by</th>
