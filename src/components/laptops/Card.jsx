@@ -4,10 +4,8 @@ import styles from "./styles/Card.module.css";
 
 function Card(props) {
   return (
-    <div>
+    <div className={styles.card} data-laptop-id={props.laptop.id}>
       <motion.div 
-        className={styles.card}
-        data-laptop-id={props.laptop.id}
         initial={{ height: '75px' }}
         animate={{ height: props.isExpanded ? '270px' : '75px' }}
         transition={{ duration: 0.5 }}
@@ -16,7 +14,7 @@ function Card(props) {
       >
         <h2>{props.laptop.brand}<span class="price">{props.laptop.price}</span></h2>
         {!props.isExpanded && 
-          <p>{props.laptop.processor} / {props.laptop.ram} / {props.laptop.screenSize}</p>
+          <p>{props.laptop.processor} / {props.laptop.ram} / {props.laptop.screensize}</p>
         }
         <AnimatePresence>
           {props.isExpanded && (
@@ -30,8 +28,8 @@ function Card(props) {
               <p><span>RAM:</span> {props.laptop.ram}</p>
               <p><span>Hard Drive:</span> {props.laptop.harddrive}</p>
               <p><span>Graphic Card:</span> {props.laptop.grapcard}</p>
-              <p><span>Capacity Graphic Card:</span> {props.laptop.capacityGraphicCard}</p>
-              <p><span>Screen Size:</span> {props.laptop.screenSize}</p>
+              <p><span>Capacity Graphic Card:</span> {props.laptop.capgrapcard}</p>
+              <p><span>Screen Size:</span> {props.laptop.screensize}</p>
               <p><span>OS:</span> {props.laptop.opsystem}</p>
               <p><span>Warranty:</span> {props.laptop.warranty}</p>
               <p className="link"><a href={props.laptop.link} target="_blank" rel="noopener noreferrer"><b>Redirect to the official website</b></a></p>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import {getAllLaptops} from '../api/laptops/LaptopsCRUD'
+import { getAllLaptops } from '../api/laptops/LaptopsCRUD'
 // import LaptopsUL from '../components/laptops/LaptopsUL'
 import ListCards from '../containers/laptops/ListCards'
 import ButtonGraphicContainer from '../containers/laptops/ButtonGraphicContainer';
