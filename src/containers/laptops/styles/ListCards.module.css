@@ -1,0 +1,17 @@
+.cards {
+    flex-grow: 1;
+    min-width: 550px;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    padding-right: 60px;
+}
+  
+#scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+  
+#scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-clip: content-box;
+    background-color: rgb(62, 43, 230);
+}

@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
 import {getAllLaptops} from '../api/laptops/LaptopsCRUD'
 // import LaptopsUL from '../components/laptops/LaptopsUL'
+import ListCards from '../containers/laptops/ListCards'
 import ButtonGraphicContainer from '../containers/laptops/ButtonGraphicContainer';
 import styles from './styles/LaptopsPage.module.css';
+
+import { examples } from './examples';
 
 export function LaptopsPage() {
   const [laptops, setLaptops] = useState([])
@@ -25,6 +28,12 @@ export function LaptopsPage() {
 
   return (
     <div className={styles.laptopsPage}>
+      {showCardContainer && (
+        <>
+          {/* <SearchColumn /> */}
+          <ListCards laptops={examples} />
+        </>
+      )}
       <ButtonGraphicContainer toggleDivs={toggleDivs}/>
       {/* <h1>Laptops manager</h1>
       <div>
