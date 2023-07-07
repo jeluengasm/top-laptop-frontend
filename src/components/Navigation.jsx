@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getUserProfile } from '../api/auth/login'
+import './headers.css'
 
 export function Navigation() {
   const [profile, setProfile] = useState([])
@@ -26,16 +27,59 @@ export function Navigation() {
   }, [])
 
   return (
+    // <div>
+    //   <Link to="/home" title="Return to home page" logged={profile.toString()}> <h1>Top Laptop </h1> </Link>
+    //   {profile && <span>Welcome, {profile.name}</span> }
+    // </div>
     <div>
-      <Link to="/home" title="Return to home page" logged={profile.toString()}> <h1>Top Laptop </h1> </Link>
-      {profile && <span>Welcome, {profile.name}</span> }
-      <nav>
-        {profile && <Link to="/dashboard-manager"> Dashboards manager </Link>}
-        {profile && <Link to="/dashboard-viewer"> Dashboards viewer </Link>}
-        <Link to="/laptops"> Top Laptops manager </Link>
-        {!profile && <Link to="/login"> Log in </Link>}
-        {profile && <Link to="/logout"> Log out </Link>}
-      </nav>
+      <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+      <main>
+        <header className="p-3 bg-dark text-white">
+          <div className="container">
+            <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+              <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li>
+                  <a href="/home" className="nav-link px-2 text-secondary">
+                    Home
+                  </a>
+                </li>
+                {profile && 
+                  <li>
+                    <a href="/dashboard-manager" className="nav-link px-2 text-white">
+                        Dashboards manager
+                    </a>
+                  </li>
+                }
+                {profile && 
+                  <li>
+                    <a href="/dashboard-viewer" className="nav-link px-2 text-white">
+                      Dashboards viewer
+                    </a>
+                  </li>
+                }
+                <li>
+                  <a href="/laptops" className="nav-link px-2 text-white">
+                    TOP Laptops
+                  </a>
+                </li>
+              </ul>
+              {!profile && 
+                <div className="text-end">
+                  <a href="/login" class="log-button">Log in</a>
+                </div>
+              }
+              {profile && 
+                <div className="text-end">
+                  <a href="/logout" class="log-button">Log in</a>
+                </div>
+              }
+            </div>
+          </div>
+        </header>
+        <div className="b-example-divider"></div>
+      </main>
+
+      <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js"></script>
     </div>
   )
 }

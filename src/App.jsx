@@ -7,7 +7,6 @@ import { HomePage } from './pages/HomePage'
 import {LaptopsPage} from './pages/LaptopsPage'
 import { Navigation } from './components/Navigation'
 
-
 function App() {
   return (
     <BrowserRouter>

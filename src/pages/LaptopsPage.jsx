@@ -35,10 +35,6 @@ export function LaptopsPage() {
         </>
       )}
       <ButtonGraphicContainer toggleDivs={toggleDivs}/>
-      {/* <h1>Laptops manager</h1>
-      <div>
-        <LaptopsUL laptops={laptops} />
-      </div> */}
     </div>
   )
 }
