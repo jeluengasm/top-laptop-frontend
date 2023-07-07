@@ -25,9 +25,8 @@ export function LoginPage() {
   
   return (
     <div className={styles.signin}>
-      <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"></link>
+      <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" />
       <main className={styles["form-signin"]}>
-        <h1 className={styles.welcome}><strong>Welcome to Top Laptops 4u!</strong></h1>
         <form onSubmit={onSubmit}>
           <h1 className="h3 mb-3 fw-normal">Please log in</h1>
 

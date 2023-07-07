@@ -29,13 +29,13 @@ export function Navigation() {
   return (
     // <div>
     //   <Link to="/home" title="Return to home page" logged={profile.toString()}> <h1>Top Laptop </h1> </Link>
-    //   {profile && <span>Welcome, {profile.name}</span> }
     // </div>
     <div>
       <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" />
       <main>
         <header className="p-3 bg-dark text-white">
           <div className="container">
+            <h2>TOP LAPTOPS 4U</h2>
             <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
               <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li>
@@ -63,6 +63,11 @@ export function Navigation() {
                   </a>
                 </li>
               </ul>
+              {profile && 
+                <div className="text-end">
+                  <span>Welcome, {profile.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                </div>
+              }
               {!profile && 
                 <div className="text-end">
                   <a href="/login" class="log-button">Log in</a>
@@ -70,13 +75,13 @@ export function Navigation() {
               }
               {profile && 
                 <div className="text-end">
-                  <a href="/logout" class="log-button">Log in</a>
+                  <span>Welcome, Ken{profile.name}</span>
+                  <a href="/logout" class="log-button">Log out</a>
                 </div>
               }
             </div>
           </div>
         </header>
-        <div className="b-example-divider"></div>
       </main>
 
       <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js"></script>

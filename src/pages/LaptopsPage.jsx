@@ -5,7 +5,7 @@ import ListCards from '../containers/laptops/ListCards'
 import ButtonGraphicContainer from '../containers/laptops/ButtonGraphicContainer';
 import styles from './styles/LaptopsPage.module.css';
 
-// import { examples } from './examples';
+import { examples } from './examples';
 
 export function LaptopsPage() {
   const [laptops, setLaptops] = useState([])
@@ -31,7 +31,7 @@ export function LaptopsPage() {
       {showCardContainer && (
         <>
           {/* <SearchColumn /> */}
-          <ListCards laptops={laptops} />
+          <ListCards laptops={examples} />
         </>
       )}
       <ButtonGraphicContainer toggleDivs={toggleDivs}/>
