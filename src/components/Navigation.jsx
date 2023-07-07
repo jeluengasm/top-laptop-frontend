@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { getUserProfile } from '../api/auth/login'
 import './headers.css'
 
@@ -27,9 +26,6 @@ export function Navigation() {
   }, [])
 
   return (
-    // <div>
-    //   <Link to="/home" title="Return to home page" logged={profile.toString()}> <h1>Top Laptop </h1> </Link>
-    // </div>
     <div>
       <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" />
       <main>
@@ -75,7 +71,6 @@ export function Navigation() {
               }
               {profile && 
                 <div className="text-end">
-                  <span>Welcome, Ken{profile.name}</span>
                   <a href="/logout" class="log-button">Log out</a>
                 </div>
               }
@@ -83,8 +78,6 @@ export function Navigation() {
           </div>
         </header>
       </main>
-
-      <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js"></script>
     </div>
   )
 }

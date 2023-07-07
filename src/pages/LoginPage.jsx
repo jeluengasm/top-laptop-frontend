@@ -1,4 +1,3 @@
-import React from 'react';
 import { useForm } from 'react-hook-form'
 import { login } from '../api/auth/login'
 import styles from './styles/LoginPage.module.css'
@@ -43,37 +42,5 @@ export function LoginPage() {
         </form>
       </main>
     </div>
-    // <div>
-    //   <div>
-    //     <h1> Log in </h1>
-    //   </div>
-    //   <div>
-    //     <form onSubmit={onSubmit}>
-    //       <div>
-    //       <label htmlFor="email">
-    //         Email
-    //       </label>
-    //       <input
-    //         type="text"
-    //         name="email"
-    //         {...register('email', { required: true })}
-    //       />
-    //       </div>
-    //       <div>
-    //       <label htmlFor="password">
-    //         Password
-    //       </label>
-    //       <input
-    //         type="password"
-    //         name="password"
-    //         {...register('password', { required: true })}
-    //       />
-    //       </div>
-    //       <div>
-    //         <input type="submit" value="Login" />
-    //       </div>
-    //     </form>
-    //   </div>
-    // </div>
   )
 }
