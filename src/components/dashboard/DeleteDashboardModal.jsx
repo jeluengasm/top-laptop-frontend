@@ -15,7 +15,6 @@ function DeleteDashboardModal ({ dashboard }) {
   const { register, handleSubmit } = useForm()
 
   const onSubmit = handleSubmit(data => {
-    console.log(data)
     removeDashboard(data)
   })
 
