@@ -6,7 +6,9 @@ function DashboardViewer({dashboard:{ id, title, description, embed_url, created
         <tr key={id}>
             <td>{title}</td>
             <td>{description}</td>
-            <td data-url={embed_url}><DashboardModal url={embed_url}></DashboardModal></td>
+            <td><DashboardModal embed_url={embed_url} title={title} id={id}></DashboardModal></td>
+            <td>{created_at}</td>
+            <td>{updated_at}</td>
         </tr>
   )
 }

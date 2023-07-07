@@ -17,7 +17,9 @@ export function DashboardManagerPage() {
 
   return (
     <div>
+      <br />
       <h1>Dashboard Manager</h1>
+      <br />
       <div>
         <DashboardManagerTable dashboards={dashboards} />
       </div>

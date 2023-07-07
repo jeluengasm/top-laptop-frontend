@@ -17,7 +17,9 @@ export function DashboardViewPage() {
 
   return (
     <div>
+      <br />
       <h1>Dashboard Viewer</h1>
+      <br />
       <div>
         <DashboardViewerTable dashboards={dashboards} />
       </div>

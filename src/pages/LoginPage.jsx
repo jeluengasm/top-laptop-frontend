@@ -2,8 +2,8 @@ import { useForm } from 'react-hook-form'
 import { login } from '../api/auth/login'
 
 export function LoginPage() {
-  async function fetchLogin({email, password}) {
-    await login({ email, password})
+  async function fetchLogin({ email, password }) {
+    await login({ email, password })
       .then((result) => {
         localStorage.setItem('token', result.data.token)
         localStorage.setItem('userId', result.data.user.id)
@@ -20,36 +20,36 @@ export function LoginPage() {
     fetchLogin(data)
   })
   return (
-    <div>
-      <div>
-        <h1> Log in </h1>
-      </div>
-      <div>
-        <form onSubmit={onSubmit}>
+    <div class="d-flex justify-content-center">
+      <br />
+      <div class="card text-dark bg-light mb-3 w-50 p-3" >
+        <div class="card-header">Log in</div>
+        <div class="card-body">
+          <h5 class="card-title">Please, type your credentials</h5>
+          <br />
           <div>
-          <label htmlFor="email">
-            Email
-          </label>
-          <input
-            type="text"
-            name="email"
-            {...register('email', { required: true })}
-          />
+            <form onSubmit={onSubmit}>
+              <div class="mb-3">
+                <label class="form-label">Email address</label>
+                <input
+                  type="email"
+                  class="form-control" aria-describedby="emailHelp"
+                  {...register('email', { required: true })}
+                />
+                <div id="emailHelp" class="form-text">Never share your email.</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  {...register('password', { required: true })}
+                  />
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
           </div>
-          <div>
-          <label htmlFor="password">
-            Password
-          </label>
-          <input
-            type="password"
-            name="password"
-            {...register('password', { required: true })}
-          />
-          </div>
-          <div>
-            <input type="submit" value="Login" />
-          </div>
-        </form>
+        </div>
       </div>
     </div>
   )

@@ -4,12 +4,14 @@ import DashboardViewer from './DashboardViewer'
 function DashboardViewerTable({dashboards}) {
 
   return (
-        <table>
+        <table class="table table-striped table-hover">
           <thead>
             <tr>
               <th>Title</th>
               <th>Description</th>
-              <th>Embed link</th>
+              <th>Show dashboard</th>
+              <th>Created at</th>
+              <th>Updated at</th>
             </tr>
           </thead>
           <tbody>
