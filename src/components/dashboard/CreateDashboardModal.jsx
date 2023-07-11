@@ -27,7 +27,7 @@ function CreateDashboardModal(){
         </button>
 
         <div class="modal fade" id={`CreateDashboard`} tabIndex="-1" aria-labelledby={`CreateDashboardLabel`} aria-hidden="true">
-          <div class="modal-dialog modal-xl">
+          <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id={`CreateDashboardLabel`}>Create dashboard</h5>

@@ -28,7 +28,7 @@ function EditDashboardModal({ dashboard }) {
         </button>
 
         <div class="modal fade" id={`editDashboard${dashboard.id}`} tabIndex="-1" aria-labelledby={`editDashboard${dashboard.id}Label`} aria-hidden="true">
-          <div class="modal-dialog modal-xl">
+          <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id={`editDashboard${dashboard.id}Label`}>Edit dashboard ({dashboard.title})</h5>

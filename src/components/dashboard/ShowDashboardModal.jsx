@@ -12,7 +12,7 @@ function DashboardModal({id, title, embed_url}) {
         </button>
 
         <div class="modal fade" id={`dashboardModal${id}`} tabIndex="-1" aria-labelledby={`dashboardModal${id}Label`} aria-hidden="true">
-          <div class="modal-dialog modal-xl">
+          <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id={`dashboardModal${id}Label`}>View dashboard ({title})</h5>
