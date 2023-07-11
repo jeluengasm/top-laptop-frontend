@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getUserProfile } from '../api/auth/login'
-import './laptops/styles/ButtonGraphic.module.css';
+import './headers.css'
 
 export function Navigation() {
   const [profile, setProfile] = useState([])
@@ -28,40 +28,56 @@ export function Navigation() {
 
   return (
     <div>
-      <nav class="navbar navbar-expand-lg bg-light navbar-light">
-        <div class="container-fluid">
-          <a class="navbar-brand"><Link to="/home" title="Return to home page" logged={profile.toString()}>Top Laptops 4U </Link></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarColor03">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page">{profile && <Link to="/dashboard-manager"> Dashboards manager </Link>}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link">{profile && <Link to="/dashboard-viewer"> Dashboards viewer </Link>}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link"><Link to="/laptops"> Top Laptops manager </Link></a>
-              </li>
-            </ul>
-            <div class="d-flex">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <p class="nav-link">{profile && <span>Welcome, {profile.name}</span> }</p>
+      <main>
+        <header className="p-3 bg-dark text-white">
+          <div className="container">
+            <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/home" className="navbar-brand"><h2>Top Laptops 4U</h2></a>
+              <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li>
+                  <a href="/home" className="nav-link px-2 text-secondary">
+                    Home
+                  </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link">{profile && <Link to="/logout"> Log out </Link>}</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link">{!profile && <Link to="/login"> Log in </Link>}</a>
+                {profile &&
+                  <li>
+                    <a href="/dashboard-manager" className="nav-link px-2 text-white">
+                        Dashboards manager
+                    </a>
+                  </li>
+                }
+                {profile &&
+                  <li>
+                    <a href="/dashboard-viewer" className="nav-link px-2 text-white">
+                      Dashboards viewer
+                    </a>
+                  </li>
+                }
+                <li>
+                  <a href="/laptops" className="nav-link px-2 text-white">
+                    TOP Laptops
+                  </a>
                 </li>
               </ul>
+              {profile &&
+                <div className="text-end">
+                  <span>Welcome, {profile.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                </div>
+              }
+              {!profile &&
+                <div className="text-end">
+                  <a href="/login" class="log-button">Log in</a>
+                </div>
+              }
+              {profile &&
+                <div className="text-end">
+                  <a href="/logout" class="log-button">Log out</a>
+                </div>
+              }
             </div>
           </div>
-        </div>
-      </nav>
+        </header>
+      </main>
     </div>
   )
 }

@@ -1,0 +1,43 @@
+.column {
+    min-width: 320px;
+    max-width: 320px;
+    border-top-right-radius: 80px 80px;
+    background: linear-gradient(rgb(62, 43, 230), rgb(88, 29, 132));
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+.column h2 {
+    margin: 50px 20px 10px 10px;
+    color: rgb(232, 232, 232);
+}
+
+.filters {
+    flex-grow: 1;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    margin-bottom: 20px;
+}
+
+#scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+  
+#scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-clip: content-box;
+}
+
+.search {
+    color:rgb(62, 43, 230);
+    background: rgb(232, 232, 232);
+    display: block;
+    width: 120px;
+    height: 40px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+  

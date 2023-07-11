@@ -4,9 +4,8 @@ import { DashboardViewPage } from './pages/DashboardViewPage'
 import { LoginPage } from './pages/LoginPage'
 import { LogoutPage } from './pages/LogoutPage'
 import { HomePage } from './pages/HomePage'
-import {LaptopsPage} from './pages/LaptopsPage'
+import { LaptopsPage } from './pages/LaptopsPage'
 import { Navigation } from './components/Navigation'
-
 
 function App() {
   return (

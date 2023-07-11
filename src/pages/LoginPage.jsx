@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form'
 import { login } from '../api/auth/login'
+import styles from './styles/LoginPage.module.css'
 
 export function LoginPage() {
   async function fetchLogin({ email, password }) {
@@ -14,43 +15,32 @@ export function LoginPage() {
         localStorage.removeItem('userId')
       })
   }
+
   const { register, handleSubmit } = useForm()
 
   const onSubmit = handleSubmit(data => {
     fetchLogin(data)
   })
+
   return (
-    <div class="d-flex justify-content-center">
-      <br />
-      <div class="card text-dark bg-light mb-3 w-50 p-3" >
-        <div class="card-header">Log in</div>
-        <div class="card-body">
-          <h5 class="card-title">Please, type your credentials</h5>
-          <br />
-          <div>
-            <form onSubmit={onSubmit}>
-              <div class="mb-3">
-                <label class="form-label">Email address</label>
-                <input
-                  type="email"
-                  class="form-control" aria-describedby="emailHelp"
-                  {...register('email', { required: true })}
-                />
-                <div id="emailHelp" class="form-text">Never share your email.</div>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  {...register('password', { required: true })}
-                  />
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+    <div className={styles.signin}>
+      <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+      <main className={styles["form-signin"]}>
+        <form onSubmit={onSubmit}>
+          <h1 className="h3 mb-3 fw-normal">Please, type your credentials</h1>
+
+          <div className="form-floating">
+            <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" {...register('email', { required: true })}/>
+            <label htmlFor="floatingInput">Email address</label>
           </div>
-        </div>
-      </div>
+          <div className="form-floating">
+            <input type="password" className="form-control" id="floatingPassword" placeholder="Password" {...register('password', { required: true })}/>
+            <label htmlFor="floatingPassword">Password</label>
+          </div>
+
+          <button className="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+        </form>
+      </main>
     </div>
   )
 }

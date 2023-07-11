@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import {getAllManagerDashboards} from '../api/dashboard/DashboardCRUD'
 import DashboardManagerTable from '../components/dashboard/DashboardManagerTable'
+import styles from './styles/LoginPage.module.css'
 
 export function DashboardManagerPage() {
   const [dashboards, setDashboards] = useState([])
@@ -18,9 +19,10 @@ export function DashboardManagerPage() {
   return (
     <div>
       <br />
-      <h1>Dashboard Manager</h1>
-      <br />
-      <div>
+      <div className={styles["table-dashboard"]}>
+        <br />
+        <h1>Dashboard Manager</h1>
+        <br />
         <DashboardManagerTable dashboards={dashboards} />
       </div>
     </div>

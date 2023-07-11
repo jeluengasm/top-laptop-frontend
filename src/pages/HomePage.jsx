@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getUserProfile } from '../api/auth/login'
+import styles from './styles/HomePage.module.css'
 
 export function HomePage() {
   const [profile, setProfile] = useState([])
@@ -24,10 +25,14 @@ export function HomePage() {
     getProfile()
   }, [])
   return (
-    <div>
+    <div className={styles.home}>
       <br />
-      <div class="align-text-middle"><h1>Welcome. {profile?'Navigate over the menu to continue.':'Please, log in to continue.'}</h1></div>
-
+      <div
+        class={`d-flex justify-content-center align-items-center col-md-12 ${styles['main-container']}`}
+      >
+        <h1 class="display-4 fw-normal">WELCOME{profile?', ' + profile.name:''}!</h1>
+        <p class="lead fw-normal">Find your perfect laptop match!</p>
+      </div>
     </div>
   )
 }

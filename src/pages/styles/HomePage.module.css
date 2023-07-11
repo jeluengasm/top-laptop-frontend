@@ -1,0 +1,14 @@
+.home {
+    display: flex;
+    height: 82vh;
+    width: 100%;
+    background-image: url("laptops_index.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main-container {
+    flex-direction: column;
+    height: 100%;
+}
