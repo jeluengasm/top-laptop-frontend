@@ -1,6 +1,6 @@
 .home {
     display: flex;
-    height: 82vh;
+    height: 100vh;
     width: 100%;
     background-image: url("laptops_index.jpg");
     background-size: cover;
