@@ -3,6 +3,9 @@ import {AnimatePresence, motion} from 'framer-motion'
 import styles from "./styles/Card.module.css";
 
 function Card(props) {
+  let desc = props.laptop.processor ? props.laptop.processor : '';
+  desc += props.laptop.ram ? (desc ? ` / ${props.laptop.ram}` : props.laptop.ram) : '';
+  desc += props.laptop.screensize ? (desc ? ` / ${props.laptop.screensize}` : props.laptop.screensize) : '';
   return (
     <div className={styles.card} data-laptop-id={props.laptop.id}>
       <motion.div 
@@ -14,7 +17,7 @@ function Card(props) {
       >
         <h2>{props.laptop.brand}<span class="price">{props.laptop.price}</span></h2>
         {!props.isExpanded && 
-          <p>{props.laptop.processor} / {props.laptop.ram} / {props.laptop.screensize}</p>
+          <p>{desc}</p>
         }
         <AnimatePresence>
           {props.isExpanded && (
